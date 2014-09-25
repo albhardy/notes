@@ -40,3 +40,12 @@ git push origin gh-pages
 ~~~
 
 ####Bonus feature: Create and Publish Draft Post
+You can create a new branch called "drafts" in your repo to by `git checkout drafts` and store draft posts in the _posts folder just like normal posts. In this way, you can still preview them with `jekyll --server --auto` while editing the post, making checkpoint commits and roll back revisions. 
+Once the post is ready for publishing, use following steps to publish:
+
+~~~
+git checkout gh-pages
+git checkout draft _post/[your draft post].markdown
+git commit -m "Publish Draft"
+git push
+~~~
